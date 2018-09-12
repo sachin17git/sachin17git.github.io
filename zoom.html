@@ -1,0 +1,42 @@
+<html>
+<head>
+<script>
+ var font=0,loading;
+ function start()
+ {
+ loading=window.setInterval("inc()",100);
+ }
+ function inc()
+ {
+ font=font+1;
+ display.innerHTML="WELCOME : " + font + "pt";
+ display.style.fontSize=font+"pt";
+ if(font>50)
+ {
+ window.clearTimeout(loading);
+ loading=window.setInterval("decr()",100);
+ }
+ display.style.color="black";
+ }
+ 
+ function decr()
+ {
+ font=font-1;
+ display.innerHTML="THANK YOU : " + font + "pt";
+ display.style.fontSize=font+"pt";
+ if(font==5)
+ {
+ window.clearTimeout(loading);
+ loading=window.setInterval("inc()",100);
+ }
+ display.style.color="black";
+ }
+ </script>
+ </head>
+ <body style="background: #4a4747;" onload="start()">
+ <center>
+ <p style="margin-top:250px" id="display"></p>
+ </center>
+ </body>
+ </html>
+ 
